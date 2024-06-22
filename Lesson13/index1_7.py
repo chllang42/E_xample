@@ -25,7 +25,6 @@ if 'bmi_result' not in st.session_state:
 #if 'weight' not in st.session_state:
     #st.session_state.weight = 30
 
-
 with st.form('bmi form',border=False):
     height = st.slider(":green[選擇身高(cm)]",max_value=250,min_value=100,key="height")
     weight = st.number_input(":green[選擇體重(kg)]",max_value=200,min_value=30,key="weight")   
@@ -45,16 +44,5 @@ with st.form('bmi form',border=False):
         else:
             txt = "重度肥胖"
 
-    
-
-
-        
-
-        
 st.markdown(f'## :orange[{st.session_state.bmi_result}]')
 st.markdown(f'#### :black[{txt}]')
-   
-
-
-
-
