@@ -1,8 +1,8 @@
 import requests
 from pydantic import BaseModel,Field,RootModel,field_validator,field_serializer
 import streamlit as st
-import Example.Lesson24.source as source
-from Example.Lesson24.source import Root
+import source
+from source import Root
 import pandas as pd
 
 
@@ -36,8 +36,16 @@ else:
             
             st.scatter_chart(df2,
                              x='站點名稱',
-                             y='總數',
+                             y='可借',
                              size='可借')
+            
+            df3 = pd.DataFrame(display_data,
+                               columns=['站點名稱','總數','可還'])
+            
+            st.scatter_chart(df3,
+                             x='站點名稱',
+                             y='可還',
+                             size='可還')
 
 
 
